@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style type="text/css">
+        body {
+        font-family: 'Poppins', sans-serif;
+        }
+    </style>
+    <title>Get Denonimators</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Please enter a value in the box below:</h2>
+        <input type="number" placeholder="Enter number here..." id="myInput">
+        <button type="button" onclick="lcd();">Get Denominators</button>
+        <h3 id="answer"></h3>
+    </div>
+
+    <script>
+        function lcd(){
+            let num = document.getElementById("myInput").value;
+            let numbers = [];
+            let lastNum;
+            let lastPart = "";
+            for (i=2; i <= num; i++) {
+                if (num % i == 0) {
+                    numbers.push(i); 
+                }
+            }
+            if (numbers.length > 1) {
+                lastNum = numbers.pop();
+                lastPart = " and " + lastNum;
+            }
+            answer.innerText = "The common denominators of " + num + " are " + numbers + lastPart;
+            //console.log("The common denominators of " + num + " are " + numbers + lastPart);
+        }
+    </script>
+</body>
+</html>
