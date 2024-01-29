@@ -37,6 +37,11 @@ header nav {
 	align-items: center;
 }
 
+a i {
+	text-decoration: none;
+	color: white;
+}
+
 header nav a {
 	text-decoration: none;
 	color: white;
